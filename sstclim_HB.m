@@ -2,7 +2,7 @@ clear all
 close all
 clc
 %% 
-path0='D:\CIO\seminario_CIO\Sesion_2\hotblob';
+path0='F:\hot_blob';
 fn='SST_2020.nc';
 fns=fullfile(path0,fn);
 
@@ -45,12 +45,13 @@ for i=1:1:12
     ssts(:,:,i)=sstm;
     months(i,1)=i;
     
+    
     pcolor(lon,lat,ssts(:,:,i));
     colorbar; caxis('auto');
     shading flat
     colormap jet
     title(num2str(i))
-    pause(1)
+    pause(0.1)
     clf
     
 end

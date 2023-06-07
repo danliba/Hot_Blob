@@ -1,5 +1,5 @@
 %% Hot_Blob monthly anomaly
-path0='D:\CIO\seminario_CIO\Sesion_2\hotblob';
+path0='F:\hot_blob';
 fn='dataset-armor-3d-nrt-weekly_1579277540696.nc';
 fns=fullfile(path0,fn);
 fn2='SST1993_2019dic.mat';
@@ -70,12 +70,14 @@ for iy=yrst:1:yren
             
             sst_m=sst_1';
             sstanom=sst_m-ssts(:,:,im);
-
+            %sst2=sst2+sstanom./length(indx01);
+%             uvelm=uvel+uvel0./length(indx01);
+%             vvelm=uvel+uvel0./length(indx01);
         daynum=datestr(datenum(iy,im,i,0,0,0));
         disp(daynum)
-
+%         disp(iter)
         subplot(2,2,iter)
-
+        %pcolor(loni,lati,sstanom);
         %shading flat
         h=imagescn(loni,lati,sstanom);
         cb=colorbar; cmocean('balance');
